@@ -1,12 +1,9 @@
-public class LivreNumerique extends livre {
+public class LivreNumerique extends Livre {
     String format;
 
-    public LivreNumerique(String format, String auteur, boolean disponible, String titre) {
+    public LivreNumerique(String format, String titre, String auteur, boolean disponible) {
         super(titre, auteur, disponible);
         this.format = format;
-    }
-    public String gettitre(){
-        return titre;
     }
 
     public String getFormat() {
@@ -18,13 +15,10 @@ public class LivreNumerique extends livre {
     }
 
     @Override
-    void afficher_details() {
-        System.out.println("\"livre{\" +\n" +
-                "                \"titre='\" + titre + '\\'' +\n" +
-                "                \", auteur='\" + auteur + '\\'' +\n" +
-                "                \", disponible=\" + disponible +\n" +
-                "                \", mon_bibliotheque=\" + mon_bibliotheque +\n" +
-                "                '}'");
+    void afficherDetails() {
+        System.out.println("Livre Numérique : " + titre + " de " + auteur + ", " +
+                (disponible ? "disponible" : "indisponible") +
+                ", Format : " + format);
     }
 
     @Override
