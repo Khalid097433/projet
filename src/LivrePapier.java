@@ -1,35 +1,30 @@
-public class LivrePapier extends livre {
-    @Override
-    void afficher_details() {
-        System.out.println("\"livre{\" +\n" +
-                "                \"titre='\" + titre + '\\'' +\n" +
-                "                \", auteur='\" + auteur + '\\'' +\n" +
-                "                \", disponible=\" + disponible +\n" +
-                "                \", mon_bibliotheque=\" + mon_bibliotheque +\n" +
-                "                '}'");
-    }
+public class LivrePapier extends Livre {
+    int nombreDePages;
 
-    int nombre_de_pages ;
-
-    public LivrePapier(int nombre_de_pages, String titre, String auteur, boolean disponible) {
+    public LivrePapier(int nbPages, String titre, String auteur, boolean disponible) {
         super(titre, auteur, disponible);
-        this.nombre_de_pages = nombre_de_pages;
+        this.nombreDePages = nbPages;
     }
 
-
-    public int getNb_page() {
-        return nombre_de_pages;
+    public int getNombreDePages() {
+        return nombreDePages;
     }
 
-    public void setNb_page(int nb_page) {
-        this.nombre_de_pages = nb_page;
+    public void setNombreDePages(int nbPages) {
+        this.nombreDePages = nbPages;
+    }
+
+    @Override
+    void afficherDetails() {
+        System.out.println("Livre Papier : " + titre + " de " + auteur + ", " +
+                (disponible ? "disponible" : "indisponible") +
+                ", Nombre de pages : " + nombreDePages);
     }
 
     @Override
     public String toString() {
         return "LivrePapier{" +
-                "nombre_de_pages=" + nombre_de_pages +
+                "nombreDePages=" + nombreDePages +
                 '}';
     }
-
 }
