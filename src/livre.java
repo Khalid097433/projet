@@ -1,28 +1,26 @@
-public abstract class livre {
-    protected String titre ;
-    protected String auteur ;
+ abstract class Livre {
+    protected String titre;
+    protected String auteur;
     protected boolean disponible;
-    bibliotheque mon_bibliotheque;
+    protected bibliotheque maBibliotheque;
 
-    public livre(String t, String a, boolean d) {
-        this.titre = titre;
-        this.auteur = auteur;
-        this.disponible = disponible;
-        this.mon_bibliotheque = mon_bibliotheque;
+    public Livre(String t, String a, boolean d) {
+        this.titre = t;
+        this.auteur = a;
+        this.disponible = d;
     }
 
-    public bibliotheque getMon_bibliotheque() {
-        return mon_bibliotheque;
+    public bibliotheque getMaBibliotheque() {
+        return maBibliotheque;
     }
 
-    public void setMon_bibliotheque(bibliotheque mon_bibliotheque) {
-        this.mon_bibliotheque = mon_bibliotheque;
+    public void setMaBibliotheque(bibliotheque maBibliotheque) {
+        this.maBibliotheque = maBibliotheque;
     }
 
     public String getTitre() {
         return titre;
     }
-
 
     public void setTitre(String titre) {
         this.titre = titre;
@@ -44,15 +42,15 @@ public abstract class livre {
         this.disponible = disponible;
     }
 
-    abstract void afficher_details ();
+    abstract void afficherDetails();
 
     @Override
     public String toString() {
-        return "livre{" +
+        return "Livre{" +
                 "titre='" + titre + '\'' +
                 ", auteur='" + auteur + '\'' +
                 ", disponible=" + disponible +
-                ", mon_bibliotheque=" + mon_bibliotheque +
+                ", maBibliotheque=" + maBibliotheque +
                 '}';
     }
 }
